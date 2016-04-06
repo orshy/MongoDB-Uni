@@ -6,7 +6,7 @@ MongoClient.connect('mongodb://localhost:27017/crunchbase', function(err, db) {
 
     assert.equal(err, null);
     console.log("Successfully connected to MongoDB.");
-    
+
     var query = {"permalink": {"$exists": true, "$ne": null}};
     var projection = {"permalink": 1, "updated_at": 1};
 
@@ -35,9 +35,9 @@ MongoClient.connect('mongodb://localhost:27017/crunchbase', function(err, db) {
                 });
 
             }
-            
+
             previous = doc;
-            
+
         },
         function(err) {
 
@@ -47,5 +47,3 @@ MongoClient.connect('mongodb://localhost:27017/crunchbase', function(err, db) {
     );
 
 });
-
-
